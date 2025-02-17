@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# TODO REACT TYPESCRIPT (Building...)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple TODO application built with React and TypeScript.
+
+## Description
+
+This application allows users to create, read, update, and delete TODO items. It provides a clean and intuitive interface for managing your tasks.
+
+## Features
+
+*   Add new TODO items
+*   Mark TODO items as complete
+*   Delete TODO items
+*   Filter TODO items by status (all, active, completed)
+*   Persist data in local storage
+
+## Technologies Used
+
+*   React
+*   TypeScript
+*   Create React App
+*   Local Storage
 
 ## Available Scripts
 
@@ -29,18 +48,18 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## How to Use
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1.  Clone the repository: `git clone <repository-url>`
+2.  Navigate to the project directory: `cd todo`
+3.  Install dependencies: `npm install`
+4.  Start the development server: `npm start`
+5.  Open the application in your browser at `http://localhost:3000`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License.
