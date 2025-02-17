@@ -1,19 +1,42 @@
-import React from 'react'
+import React, {useState, ChangeEvent, FormEvent, useEffect} from 'react'
 import styles from './TaskForm.module.css'
+import {ITask} from '../interfaces/Task'
 
 interface Props {
   btnText: string
 }
 
 const TaskForm = ({btnText}: Props) => {
-  return <form className={styles.form}>
+  const [id, setId] = useState<number>(0)
+  const [title, setTitle] = useState<string>('')
+  const [difficulty, setDifficulty] = useState<number>(0)
+
+  const addTaskHandler = (e: FormEvent) => {
+    e.preventDefault()
+    const newTask: ITask = {
+      id: id,
+      title: title,
+      difficulty: difficulty
+    }
+    console.log(newTask)
+  }
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.id === 'title') {
+      setTitle(e.target.value)
+    } else {
+      setDifficulty(parseInt(e.target.value))
+    }
+  }
+
+  return <form className={styles.form} onSubmit={addTaskHandler}>
     <div className={styles.input_container}>
       <label htmlFor="task">Título:</label>
-      <input type="text" id="title" placeholder='Título da tarefa'/>
+      <input type="text" id="title" placeholder='Título da tarefa' onChange={handleChange}/>
     </div>
     <div className={styles.input_container}>
       <label htmlFor="description">Dificuldade:</label>
-      <input type="text"  name="difficulty" placeholder='Dificuldade da tarefa'/>
+      <input type="number"  name="difficulty" placeholder='Dificuldade da tarefa'  onChange={handleChange}/>
     </div>
     <input type='submit' value={btnText}/>
   </form>
