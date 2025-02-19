@@ -30,8 +30,23 @@ function App() {
       setTaskToUpdate(task)
   }
 
+  const updateTask = (id: number, title: string, difficulty: number) => {
+    const updateTask: ITask = {id, title, difficulty}
+
+    const updateItems = tasks.map((task) => {
+        if (task.id === id) {
+          return updateTask
+        }
+        return task
+      }
+    )
+
+    setTasks(updateItems)
+    hideOrShowModal(false)
+  }
+
   return <div>
-    <Modal children={<TaskForm btnText='Editar Tarefa' taskList={tasks} task={taskToUpdate}/>}/>
+    <Modal children={<TaskForm btnText='Editar Tarefa' taskList={tasks} task={taskToUpdate} handleUpdate={updateTask}/>}/>
     <Header />
     <main className={styles.main}>
       <div>
