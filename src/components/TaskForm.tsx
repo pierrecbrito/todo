@@ -21,6 +21,7 @@ const TaskForm = ({btnText, taskList}: Props) => {
         title: title,
         difficulty: difficulty
       })
+
       console.log(taskList)
     }
   }
