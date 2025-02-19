@@ -10,6 +10,7 @@ import {ITask} from './interfaces/Task';
 
 function App() {
   const [tasks, setTasks] = React.useState<ITask[]>([])
+  const [taskToUpdate, setTaskToUpdate] = React.useState<ITask | null>(null)
 
   const deleteTask = (id: number) => {
     setTasks(tasks.filter((task) => task.id !== id))
@@ -24,12 +25,13 @@ function App() {
     }
   }
 
-  const editTask = () => {
+  const editTask = (task: ITask) => {
       hideOrShowModal(true)
+      setTaskToUpdate(task)
   }
 
   return <div>
-    <Modal children={<TaskForm btnText='Editar Tarefa' taskList={tasks}/>}/>
+    <Modal children={<TaskForm btnText='Editar Tarefa' taskList={tasks} task={taskToUpdate}/>}/>
     <Header />
     <main className={styles.main}>
       <div>
