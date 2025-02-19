@@ -4,10 +4,11 @@ import {ITask} from '../interfaces/Task'
 
 interface Props {
   btnText: string,
-  taskList?: ITask[]
+  taskList?: ITask[],
+  setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>
 }
 
-const TaskForm = ({btnText, taskList}: Props) => {
+const TaskForm = ({btnText, taskList, setTaskList}: Props) => {
   const [id, setId] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
   const [difficulty, setDifficulty] = useState<number>(0)
@@ -16,13 +17,13 @@ const TaskForm = ({btnText, taskList}: Props) => {
     e.preventDefault()
     if (title.trim() !== '') {
       setId(id + 1)
-      taskList?.push({
+      setTaskList!([...taskList!, {
         id: id,
         title: title,
         difficulty: difficulty
-      })
-
-      console.log(taskList)
+      }])
+      setTitle('')
+      setDifficulty(0)
     }
   }
 

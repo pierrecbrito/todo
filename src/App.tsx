@@ -14,7 +14,7 @@ function App() {
     <main className={styles.main}>
       <div>
         <h2>O que vocÊ vai fazer?</h2>
-        <TaskForm btnText='Salvar Tarefa' taskList={tasks}/>
+        <TaskForm btnText='Salvar Tarefa' taskList={tasks} setTaskList={setTasks}/>
       </div>
       <div>
         <h2>Suas tarefas:</h2>
